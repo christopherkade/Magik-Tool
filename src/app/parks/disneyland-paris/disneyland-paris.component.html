@@ -1,11 +1,6 @@
-<!--<ul class="list-group" *ngFor="let attraction of attractions">-->
-<!--<li class="list-group-item">-->
-<!--<span class="badge">{{ attraction.waitTime }}</span>-->
-<!--{{ attraction.name }}-->
-<!--</li>-->
-<!--</ul>-->
-
 <div class="container">
+  <!-- Search bar for our filter -->
+  <input type="text" placeholder="Search..." [(ngModel)]="filter.name" class="form-control" name="first">
 
   <div class="attractions-list">
     <div class="table-responsive">
@@ -18,8 +13,7 @@
         </thead>
 
         <tbody>
-        <!-- Single event in a single day -->
-        <tr *ngFor="let attraction of attractions">
+        <tr *ngFor="let attraction of attractions | attractionfilter:filter">
           <td class="attraction-name">
             {{ attraction.name }}
           </td>

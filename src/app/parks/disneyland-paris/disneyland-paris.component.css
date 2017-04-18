@@ -1,32 +1,9 @@
-.list-group {
-  padding-right: 40%;
-  padding-left: 40%;
-}
-
-.attractions-list {  }
-
-/*!* Dates *!*/
-/*.attractions-list { width: 170px; }*/
-/*.attractions-list .agenda-date .dayofmonth {*/
-  /*width: 40px;*/
-  /*font-size: 36px;*/
-  /*line-height: 36px;*/
-  /*float: left;*/
-  /*text-align: right;*/
-  /*margin-right: 10px;*/
-/*}*/
-/*.attractions-list .agenda-date .shortdate {*/
-  /*font-size: 0.75em;*/
-/*}*/
-
-
-/* Names */
 .attractions-list .attraction-name { width: 100px; }
 .attractions-list .attraction-time { width: 20px; }
-
-/*!* Events *!*/
-/*.attractions-list .attraction-time { }*/
-/*.attractions-list .attraction-time .agenda-event {  }*/
+.form-control {
+  width: 150px;
+  margin-bottom: 15px;
+}
 
 @media (max-width: 767px) {
 

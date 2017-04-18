@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
-import {Observable} from "rxjs/Observable";
-import {Attraction} from "./attraction/attraction";
+import {Observable} from 'rxjs/Observable';
+import {Attraction} from './attraction/attraction';
 
 @Injectable()
 export class ParksService {
@@ -11,9 +11,14 @@ export class ParksService {
 
   constructor(private http: Http) { }
 
-  // Get wait times for DLP
-  getDisneylandParisTimes(): Observable<Attraction> {
+  getDisneylandParisAttractions(): Observable<Attraction> {
     const url = this.parksUrl + '/disneyland-paris';
+    return this.http.get(url)
+      .map(res => res.json());
+  }
+
+  getWaltDisneyStudiosAttraction(): Observable<Attraction> {
+    const url = this.parksUrl + '/walt-disney-studios';
     return this.http.get(url)
       .map(res => res.json());
   }

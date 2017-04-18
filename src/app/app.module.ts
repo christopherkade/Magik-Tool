@@ -10,6 +10,7 @@ import { DisneylandParisComponent } from './parks/disneyland-paris/disneyland-pa
 import { WaltDisneyStudiosComponent } from './parks/walt-disney-studios/walt-disney-studios.component';
 import { HomeComponent } from './home/home.component';
 import {ParksService} from './parks.service';
+import {AttractionFilterPipe} from './parks/filter/filter.pipe';
 
 const ROUTES = [
   {
@@ -37,7 +38,8 @@ const ROUTES = [
     NavigationComponent,
     DisneylandParisComponent,
     WaltDisneyStudiosComponent,
-    HomeComponent
+    HomeComponent,
+    AttractionFilterPipe
   ],
   imports: [
     BrowserModule,

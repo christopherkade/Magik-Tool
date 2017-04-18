@@ -1,3 +1,29 @@
-<p>
-  walt-disney-studios works!
-</p>
+<div class="container">
+  <!-- Search bar for our filter -->
+  <input type="text" placeholder="Search..." [(ngModel)]="filter.name" class="form-control" name="first">
+
+  <div class="attractions-list">
+    <div class="table-responsive">
+      <table class="table table-condensed table-bordered">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Wait time</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let attraction of attractions | attractionfilter:filter">
+          <td class="attraction-name">
+            {{ attraction.name }}
+          </td>
+          <td class="attraction-time">
+            {{ attraction.waitTime }}
+          </td>
+        </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>

@@ -26,4 +26,23 @@ router.get('/disneyland-paris', (req, res) => {
   }));
 });
 
+router.get('/walt-disney-studios', (req, res) => {
+  let allRides = [];
+  const disneylandParis = new Themeparks.Parks.DisneylandParisWaltDisneyStudios;
+
+  // access wait times by Promise
+  disneylandParis.GetWaitTimes().then(function(rides) {
+    // Get wait times for Paris rides
+    for (let i = 0, ride; ride = rides[i++];) {
+      allRides.push(ride);
+    }
+    if (allRides !== null) {
+      res.status(200).json(allRides);
+    }
+  }, console.error(error => {
+    res.status(500).send(error)
+  }));
+});
+
+
 module.exports = router;
