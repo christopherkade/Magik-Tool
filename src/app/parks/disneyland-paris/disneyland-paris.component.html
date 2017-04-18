@@ -1,6 +1,35 @@
-<ul class="list-group" *ngFor="let attraction of attractions">
-  <li class="list-group-item">
-    <span class="badge">{{ attraction.waitTime }}</span>
-    {{ attraction.name }}
-  </li>
-</ul>
+<!--<ul class="list-group" *ngFor="let attraction of attractions">-->
+<!--<li class="list-group-item">-->
+<!--<span class="badge">{{ attraction.waitTime }}</span>-->
+<!--{{ attraction.name }}-->
+<!--</li>-->
+<!--</ul>-->
+
+<div class="container">
+
+  <div class="attractions-list">
+    <div class="table-responsive">
+      <table class="table table-condensed table-bordered">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Wait time</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <!-- Single event in a single day -->
+        <tr *ngFor="let attraction of attractions">
+          <td class="attraction-name">
+            {{ attraction.name }}
+          </td>
+          <td class="attraction-time">
+            {{ attraction.waitTime }}
+          </td>
+        </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>

@@ -18,7 +18,7 @@ router.get('/disneyland-paris', (req, res) => {
     for (let i = 0, ride; ride = rides[i++];) {
       allRides.push(ride);
     }
-    if (times !== null) {
+    if (allRides !== null) {
       res.status(200).json(allRides);
     }
   }, console.error(error => {
