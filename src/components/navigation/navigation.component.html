@@ -1,0 +1,102 @@
+<div class="site-wrapper">
+
+  <div class="site-wrapper-inner">
+
+    <div class="cover-container">
+
+      <div class="masthead clearfix">
+        <div class="inner">
+          <h3 class="masthead-brand">Magik</h3>
+          <nav>
+            <ul class="nav masthead-nav">
+              <li [routerLinkActive]="['active']"><a routerLink="/home">Home</a></li>
+
+              <!-- Paris -->
+              <li class="dropdown" [routerLinkActive]="['active']">
+                <a class="dropdown-toggle" data-toggle="dropdown"
+                   role="button" aria-haspopup="true"
+                   aria-expanded="false">Disneyland Paris<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a routerLink="/parks/disneyland-paris">Disneyland</a>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a routerLink="/parks/walt-disney-studios">Walt Disney Studios</a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- WDW -->
+              <li class="dropdown" [routerLinkActive]="['active']">
+                <a class="dropdown-toggle" data-toggle="dropdown"
+                   role="button" aria-haspopup="true"
+                   aria-expanded="false">Walt Disney World <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a routerLink="/parks/wdw-magic-kingdom">Magic Kingdom</a>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a routerLink="/parks/epcot">Epcot</a>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a routerLink="/parks/animal-kingdom">Animal Kingdom</a>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a routerLink="/parks/hollywood-studios">Hollywood Studios</a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Californa -->
+              <li class="dropdown" [routerLinkActive]="['active']">
+                <a class="dropdown-toggle" data-toggle="dropdown"
+                   role="button" aria-haspopup="true"
+                   aria-expanded="false">Disneyland Resort<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a routerLink="/parks/dr-magic-kingdom">Magic Kingdom</a>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a routerLink="/parks/california-adventure">California Adventure</a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Disneyland Asia -->
+              <li class="dropdown" [routerLinkActive]="['active']">
+                <a class="dropdown-toggle" data-toggle="dropdown"
+                   role="button" aria-haspopup="true"
+                   aria-expanded="false">Disneyland Asia<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a routerLink="/parks/sdr-magic-kingdom">Shanghai's Magic Kingdom</a>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a routerLink="/parks/tdr-magic-kingdom">Tokyo's Magic Kingdom</a>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a routerLink="/parks/tdr-disney-sea">Tokyo's Disney Sea</a>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a routerLink="/parks/hk-disneyland">Hong Kong's Disneyland</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Our outlet -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

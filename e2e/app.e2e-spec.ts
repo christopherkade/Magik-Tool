@@ -1,14 +1,14 @@
 import { KadeAppPage } from './app.po';
 
-describe('kade-app App', function() {
+describe('kade-components App', function() {
   let page: KadeAppPage;
 
   beforeEach(() => {
     page = new KadeAppPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying components works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('components works!');
   });
 });

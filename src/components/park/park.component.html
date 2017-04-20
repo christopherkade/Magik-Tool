@@ -1,0 +1,33 @@
+<div class="container fade in active">
+  <!-- Search bar for pipeslter -->
+  <input type="text" placeholder="Search..." [(ngModel)]="filter.name" class="form-control" name="first">
+
+  <div class="attractions-list">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Wait time</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let attraction of attractions | attractionfilter:filter | sortBy: 'waitTime'">
+          <td class="attraction-name">
+            {{ attraction.name }}
+          </td>
+          <td class="attraction-time">
+            {{ attraction.waitTime }}
+          </td>
+        </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+
+  <!-- Our awesome-font loading animation -->
+  <i *ngIf="loading" class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+  <span class="sr-only">Loading...</span>
+</div>

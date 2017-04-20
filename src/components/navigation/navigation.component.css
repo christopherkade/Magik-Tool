@@ -1,0 +1,13 @@
+.dropdown-toggle:active, .open .dropdown-toggle {
+  background: none !important;
+  border-color: white !important;
+}
+
+.nav {
+  padding-right: 50px;
+}
+
+.btn {
+  background-color: #a9a9a9;
+  border-color: #a9a9a9;
+}
