@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
-import {Attraction} from './attraction/attraction';
+import {Attraction} from '../models/attraction/attraction';
 
 /**
  * Service for our parks data
@@ -12,7 +12,7 @@ export class ParksService {
 
   private parksUrl = 'http://localhost:3000/api'
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) {}
 
   // PARIS
   getDisneylandParisAttractions(): Observable<Attraction> {

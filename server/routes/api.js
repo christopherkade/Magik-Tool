@@ -33,6 +33,8 @@ router.get('/walt-disney-studios', (req, res) => {
   let allRides = [];
   const studios = new Themeparks.Parks.DisneylandParisWaltDisneyStudios;
 
+  allRides.push('Walt Disney Studios - Disneyland Paris');
+
   // access wait times by Promise
   studios.GetWaitTimes().then(function(rides) {
     // Get wait times for Paris rides
@@ -152,6 +154,8 @@ router.get('/dr-magic-kingdom', (req, res) => {
 router.get('/california-adventure', (req, res) => {
   let allRides = [];
   const caliAdventure = new Themeparks.Parks.DisneylandResortCaliforniaAdventure;
+
+  allRides.push('California Adventure - Disneyland Resort');
 
   // access wait times by Promise
   caliAdventure.GetWaitTimes().then(function(rides) {

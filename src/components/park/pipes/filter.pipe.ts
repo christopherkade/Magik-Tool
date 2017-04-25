@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {Attraction} from '../../attraction/attraction';
+import {Attraction} from '../../../models/attraction/attraction';
 
 /**
  * Our attraction name pipes for our search bars

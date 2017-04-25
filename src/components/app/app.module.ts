@@ -5,13 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import {RouterModule} from '@angular/router';
-import { NavigationComponent } from './navigation/navigation.component';
-import { HomeComponent } from './home/home.component';
-import {ParksService} from './parks.service';
-import {AttractionFilterPipe} from './park/pipes/filter.pipe';
-import {FooterComponent} from './footer/footer.component';
-import {ParkComponent} from './park/park.component';
-import {SortPipe} from "./park/pipes/sort.pipe";
+import { NavigationComponent } from '../navigation/navigation.component';
+import { HomeComponent } from '../home/home.component';
+import {ParksService} from '../../services/parks.service';
+import {AttractionFilterPipe} from '../park/pipes/filter.pipe';
+import {FooterComponent} from '../footer/footer.component';
+import {ParkComponent} from '../park/park.component';
+import {SortPipe} from "../park/pipes/sort.pipe";
 
 const ROUTES = [
   {

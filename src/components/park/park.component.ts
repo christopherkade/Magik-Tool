@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {Attraction} from '../attraction/attraction';
-import {ParksService} from '../parks.service';
+import {Attraction} from '../../models/attraction/attraction';
+import {ParksService} from '../../services/parks.service';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import 'rxjs/add/operator/filter';
 import {ObserveContent} from "@angular/material";
 import {Observable} from "rxjs/Observable";
+import {Park} from "../../models/park/park";
 
 @Component({
   selector: 'app-park',
@@ -32,20 +33,10 @@ export class ParkComponent implements OnInit {
             .subscribe(attractions => {
               this.attractions = attractions;
               this.loading = false;
-              this.removeClosedAttractions();
             });
           this.loading = true;
         }
       });
-  }
-
-  removeClosedAttractions() {
-    for (const attraction of this.attractions) {
-      if (attraction.status === 'Closed') {
-        // attraction.waitTime = 'Closed';
-        // console.log('Eeek, ' + attraction.name + ' is not active !');
-      }
-    }
   }
 
   /**
