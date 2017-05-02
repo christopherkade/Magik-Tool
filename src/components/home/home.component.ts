@@ -3,17 +3,8 @@ import * as $ from 'jquery';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  templateUrl: './home.component.html'
 })
-export class HomeComponent implements OnInit {
-
+export class HomeComponent {
   constructor() { }
-
-  ngOnInit() {
-  }
-
-  doLearnMore(event) {
-    event.preventDefault();
-  }
 }
