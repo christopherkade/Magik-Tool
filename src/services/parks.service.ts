@@ -11,7 +11,7 @@ import {Attraction} from '../models/attraction/attraction';
 export class ParksService {
 
   // private parksUrl = 'http://localhost:3000/api'
-  private parksUrl = 'http://localhost:3000/api'
+  private parksUrl = 'https://localhost:443/api'
 
   constructor(private http: Http) {}
 
