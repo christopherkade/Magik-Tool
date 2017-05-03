@@ -10,8 +10,7 @@ import {Attraction} from '../models/attraction/attraction';
 @Injectable()
 export class ParksService {
 
-  // private parksUrl = 'http://localhost:3000/api'
-  private parksUrl = 'https://localhost:443/api'
+  private parksUrl = ':3000/api'
 
   constructor(private http: Http) {}
 
