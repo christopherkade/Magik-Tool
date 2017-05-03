@@ -10,7 +10,7 @@ import {Attraction} from '../models/attraction/attraction';
 @Injectable()
 export class ParksService {
 
-  private parksUrl = ':3000/api'
+  private parksUrl = 'https://magik-tool.herokuapp.com:3000/api';
 
   constructor(private http: Http) {}
 
