@@ -12,7 +12,6 @@ export class ParksService {
 
   private parksUrl = 'https://magik-tool.herokuapp.com:3000/api';
 
-
   constructor(private http: Http) {}
 
   // PARIS

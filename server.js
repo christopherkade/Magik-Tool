@@ -72,15 +72,15 @@ app.get('*', (req, res) => {
 /**
  * Get port from environment and store in Express.
  */
-// const port = process.env.PORT || '3000';
-// app.set('port', port);
+const port = process.env.PORT || '3000';
+app.set('port', port);
 
 /**
  * Create HTTP server.
  */
 // const server = http.createServer(app);
 const server = https.createServer(https_options, app)
-  .listen(PORT, HOST);
+  .listen({port}, HOST);
 console.log('HTTPS Server listening on %s:%s', HOST, PORT);
 
 /**
