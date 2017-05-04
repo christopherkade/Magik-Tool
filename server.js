@@ -7,13 +7,13 @@ const http = require('http');
 const https = require('https');
 const bodyParser = require('body-parser');
 
-// const fs = require('fs');
-// const key = fs.readFileSync('./key.pem');
-// const cert = fs.readFileSync('./cert.pem')
-// const https_options = {
-//   key: key,
-//   cert: cert
-// };
+const fs = require('fs');
+const key = fs.readFileSync('./key.pem');
+const cert = fs.readFileSync('./cert.pem')
+const https_options = {
+  key: key,
+  cert: cert
+};
 
 const PORT = 3000;
 const HOST = 'localhost';
@@ -48,18 +48,18 @@ app.use(function (req, res, next) {
   next();
 });
 
-// const forceSSL = function() {
-//   return function (req, res, next) {
-//     if (req.headers['x-forwarded-proto'] !== 'https') {
-//       return res.redirect(
-//         ['https://', req.get('Host'), req.url].join('')
-//       );
-//     }
-//     next();
-//   }
-// };
-//
-// app.use(forceSSL());
+const forceSSL = function() {
+  return function (req, res, next) {
+    if (req.headers['x-forwarded-proto'] !== 'https') {
+      return res.redirect(
+        ['https://', req.get('Host'), req.url].join('')
+      );
+    }
+    next();
+  }
+};
+
+app.use(forceSSL());
 
 // Set our api routes
 app.use('/api', api);
@@ -72,19 +72,19 @@ app.get('*', (req, res) => {
 /**
  * Get port from environment and store in Express.
  */
-const port = process.env.PORT || '3000';
-app.set('port', port);
+// const port = process.env.PORT || '3000';
+// app.set('port', port);
 
 /**
  * Create HTTP server.
  */
-const server = http.createServer(app);
-// const server = https.createServer(https_options, app)
-//   .listen(PORT, HOST);
-// console.log('HTTPS Server listening on %s:%s', HOST, PORT);
+// const server = http.createServer(app);
+const server = https.createServer(https_options, app)
+  .listen(PORT, HOST);
+console.log('HTTPS Server listening on %s:%s', HOST, PORT);
 
 /**
  * Listen on provided port, on all network interfaces.
  */
-server.listen(port, () => console.log(`API running on localhost:${port}`));
+// server.listen(port, () => console.log(`API running on localhost:${port}`));
 
