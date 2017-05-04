@@ -4,7 +4,16 @@
 const express = require('express');
 const path = require('path');
 const http = require('http');
+const https = require('https');
 const bodyParser = require('body-parser');
+
+var fs = require('fs');
+const key = fs.readFileSync('./key.pem');
+const cert = fs.readFileSync('./cert.pem')
+const https_options = {
+  key: key,
+  cert: cert
+};
 
 // Get our API routes
 const api = require('./server/routes/api');
@@ -19,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/dist'));
 
 app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.setHeader('Access-Control-Allow-Origin', 'https://magik-tool.herokuapp.com:4200');
   // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
 
   // Request methods you wish to allow
@@ -36,18 +45,18 @@ app.use(function (req, res, next) {
   next();
 });
 
-// const forceSSL = function() {
-//   return function (req, res, next) {
-//     if (req.headers['x-forwarded-proto'] !== 'https') {
-//       return res.redirect(
-//         ['https://', req.get('Host'), req.url].join('')
-//       );
-//     }
-//     next();
-//   }
-// };
-//
-// app.use(forceSSL());
+const forceSSL = function() {
+  return function (req, res, next) {
+    if (req.headers['x-forwarded-proto'] !== 'https') {
+      return res.redirect(
+        ['https://', req.get('Host'), req.url].join('')
+      );
+    }
+    next();
+  }
+};
+
+app.use(forceSSL());
 
 // Set our api routes
 app.use('/api', api);
@@ -66,7 +75,8 @@ app.set('port', port);
 /**
  * Create HTTP server.
  */
-const server = http.createServer(app);
+// const server = http.createServer(app);
+const server = https.createServer(https_options, app);
 
 /**
  * Listen on provided port, on all network interfaces.

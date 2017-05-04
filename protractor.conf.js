@@ -13,7 +13,7 @@ exports.config = {
     'browserName': 'chrome'
   },
   directConnect: true,
-  baseUrl: 'https://localhost:3000/',
+  baseUrl: 'https://magik-tool.herokuapp.com:3000/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
