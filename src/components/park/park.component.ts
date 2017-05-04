@@ -23,9 +23,9 @@ export class ParkComponent implements OnInit {
               private route: ActivatedRoute,
               private router: Router) {
     // Get the current park selected in navigation (in order to have a generic component)
+    // .filter(event => event instanceof NavigationEnd)
     router.events
-      .filter(event => event instanceof NavigationEnd)
-      .subscribe((val) => {
+      .subscribe(() => {
         if (this.name !== this.route.snapshot.params['name']) {
           this.name = this.route.snapshot.params['name'];
           this.attractions = [];

@@ -16,7 +16,6 @@ router.get('/disneyland-paris', (req, res) => {
   disneylandParis.GetWaitTimes().then(function(rides) {
     // Get wait times for Paris rides
     for (let i = 0, ride; ride = rides[i++];) {
-      // if (ride.status !== 'Closed')
       allRides.push(ride);
     }
     if (allRides !== null) {
@@ -32,8 +31,6 @@ router.get('/disneyland-paris', (req, res) => {
 router.get('/walt-disney-studios', (req, res) => {
   let allRides = [];
   const studios = new Themeparks.Parks.DisneylandParisWaltDisneyStudios;
-
-  allRides.push('Walt Disney Studios - Disneyland Paris');
 
   // access wait times by Promise
   studios.GetWaitTimes().then(function(rides) {

@@ -17,6 +17,7 @@ export class AttractionFilterPipe implements PipeTransform {
     return items.filter((item: Attraction) => this.applyFilter(item, filter));
   }
 
+  // TODO: Handle ERROR TypeError: Cannot read property 'toLowerCase' of undefined on WDS
   applyFilter(attraction: Attraction, filter: Attraction): boolean {
     for (const field in filter) {
       if (filter[field]) {

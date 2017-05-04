@@ -4,7 +4,6 @@
 const express = require('express');
 const path = require('path');
 const http = require('http');
-// const https = require('https');
 const bodyParser = require('body-parser');
 
 // Get our API routes
@@ -20,7 +19,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/dist'));
 
 app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+  // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
 
   // Request methods you wish to allow
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -67,11 +67,9 @@ app.set('port', port);
  * Create HTTP server.
  */
 const server = http.createServer(app);
-// const server = https.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
  */
-// server.listen(port, "0.0.0.0");
 server.listen(port, () => console.log(`API running on localhost:${port}`));
 

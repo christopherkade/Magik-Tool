@@ -26,6 +26,10 @@ const ROUTES = [
   {
     path: 'parks/:name',
     component: ParkComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'home'
   }
 ];
 
