@@ -8,12 +8,12 @@ const https = require('https');
 const bodyParser = require('body-parser');
 
 const fs = require('fs');
-const key = fs.readFileSync('./key.pem');
-const cert = fs.readFileSync('./cert.pem')
-const https_options = {
-  key: key,
-  cert: cert
-};
+// // const key = fs.readFileSync('./key.pem');
+// // const cert = fs.readFileSync('./cert.pem')
+// const https_options = {
+//   key: key,
+//   cert: cert
+// };
 
 const PORT = 3000;
 const HOST = 'localhost';
@@ -79,7 +79,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 // const server = http.createServer(app);
-const server = https.createServer(https_options, app)
+const server = https.createServer(app)
   .listen({port}, HOST);
 console.log('HTTPS Server listening on %s:%s', HOST, PORT);
 
