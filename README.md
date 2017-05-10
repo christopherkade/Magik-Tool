@@ -3,10 +3,9 @@ A website to retrieve wait times of any Disneyland attraction around the world.
 
 How to use it locally: 
 - First clone the repository
-- `npm install`
-- `node server.js`
-- `npm start`
-- Finally check out `http://localhost:4200`
+- Run `ng build --aot -prod`
+- Then `node server.js`
+- Finally check out `http://localhost:3000`
 
 <img src="https://cloud.githubusercontent.com/assets/15229355/25268549/67ce0c76-2679-11e7-822b-bc6a8b7a1583.png">
 
