@@ -14,5 +14,12 @@ th {
 }
 
 @media (max-width: 767px) {
+  .container {
+    padding: 0;
+  }
 
+}
+
+.loader {
+  margin-left: 300px;
 }

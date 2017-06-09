@@ -28,7 +28,8 @@
     </div>
   </div>
 
-  <!-- Our awesome-font loading animation -->
-  <i *ngIf="loading" class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+  <div class="loader">
+    <ng-load class="loader" colorOdd="white" colorEven="teal" width="20" height="20" shape="circle"></ng-load>
+  </div>
   <span class="sr-only">Loading...</span>
 </div>

@@ -11,3 +11,9 @@
   background-color: #a9a9a9;
   border-color: #a9a9a9;
 }
+
+@media only screen and (max-width: 767px) {
+  .nav {
+    padding: 0;
+  }
+}

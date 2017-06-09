@@ -12,6 +12,7 @@ import {AttractionFilterPipe} from '../park/pipes/filter.pipe';
 import {FooterComponent} from '../footer/footer.component';
 import {ParkComponent} from '../park/park.component';
 import {SortPipe} from "../park/pipes/sort.pipe";
+import {LoadModule, LoadService} from 'ng-load-animation';
 
 const ROUTES = [
   {
@@ -47,9 +48,10 @@ const ROUTES = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    LoadModule
   ],
-  providers: [ParksService],
+  providers: [ParksService, LoadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

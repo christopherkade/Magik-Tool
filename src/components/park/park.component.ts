@@ -1,29 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {Attraction} from '../../models/attraction/attraction';
 import {ParksService} from '../../services/parks.service';
-import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import 'rxjs/add/operator/filter';
-import {ObserveContent} from "@angular/material";
 import {Observable} from "rxjs/Observable";
-import {Park} from "../../models/park/park";
+import {LoadService} from 'ng-load-animation';
 
 @Component({
   selector: 'app-park',
   templateUrl: './park.component.html',
   styleUrls: ['./park.component.css']
 })
-export class ParkComponent implements OnInit {
+export class ParkComponent {
 
   attractions: any = [];
   name: string;
   filter: Attraction = new Attraction();
-  loading: boolean;
 
   constructor(private parksService: ParksService,
               private route: ActivatedRoute,
-              private router: Router) {
+              private router: Router,
+              private loadService: LoadService) {
     // Get the current park selected in navigation (in order to have a generic component)
-    // .filter(event => event instanceof NavigationEnd)
     router.events
       .subscribe(() => {
         if (this.name !== this.route.snapshot.params['name']) {
@@ -32,9 +30,9 @@ export class ParkComponent implements OnInit {
           this.getParkAttractions()
             .subscribe(attractions => {
               this.attractions = attractions;
-              this.loading = false;
+              this.loadService.animate(false);
             });
-          this.loading = true;
+          this.loadService.animate(true);
         }
       });
   }
@@ -71,8 +69,5 @@ export class ParkComponent implements OnInit {
       default:
         break;
     }
-  }
-
-  ngOnInit() {
   }
 }
